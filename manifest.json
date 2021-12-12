@@ -1,0 +1,21 @@
+{
+	"name": "Fun Times",
+	"short_name": "FunTimes",
+	"description": "A fun way to learn your times tables!",
+	"dir": "ltr",
+	"lang": "en-US",
+	"start_url": "index.html",
+	"scope":"/",
+	"display": "fullscreen",
+	"icons": [
+	{
+		"src":"app_icon.jpg",
+		"type":"image/jpg",
+		"sizes":"192x192"
+	},
+	],
+	"theme_color": "#ffffff",
+	"background_color": "#ffffff",
+	"orientation": "any",
+	
+}

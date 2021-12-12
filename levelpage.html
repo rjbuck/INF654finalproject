@@ -1,0 +1,101 @@
+<!DOCTYPE=html>
+<html lang="en">
+<head>
+<title>FunTimes</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<div id="wrapper">
+<body>
+<header>
+<h1><a href="index.html">FunTimes</a></h1>
+</header>
+<main>
+<head>
+	<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<h2 id="myNumber">uaiwefoji</h2>
+<h2> x </h2>
+<h2 id="mathVar">aiewuaheof</h2>
+<table>
+	<tr>
+		<td><input type=radio><p id="number1"></td>
+		<td><input type=radio><p id="number2"></td>
+	</tr>
+	<tr>
+		<td><input type=radio><p id="number3"></td>
+		<td><input type=radio id="checked"><p id="correct"></td>
+	</tr>
+</table>
+<input type="button" id='button' value = "Check" onclick="theClick()">
+<p id="thetext"></p>
+
+<button type="submit" onClick="next()">Next</button>
+</body>
+</html>
+<script>
+function theClick() { 
+
+    if(document.getElementById('checked').checked)
+        document.getElementById('thetext').innerHTML = "Good Job!";
+    else
+        document.getElementById('thetext').innerHTML = "Nice Try";
+}
+</script>
+<script>
+function next(){
+    window.location.reload();
+} 
+</script>
+<script>
+const queryString = window.location.search;
+const urlParameters = new URLSearchParams(queryString);
+let mathVar1 = urlParameters.get('id')
+</script>
+<script>
+document.getElementById("myNumber").innerHTML = mathVar1;
+</script>
+<script>
+let mathVar2 = Math.floor(Math.random() * 12);
+document.getElementById("mathVar").innerHTML = mathVar2;
+</script>
+<script>
+let choice1 = Math.floor(Math.random() * 144)
+document.getElementById("number1").innerHTML = choice1;
+</script>
+<script>
+let choice2 = Math.floor(Math.random() * 144)
+document.getElementById("number2").innerHTML = choice2;
+</script>
+<script>
+let choice3 = Math.floor(Math.random() * 144)
+document.getElementById("number3").innerHTML = choice3;
+</script>
+<script>
+mathAnswer = mathVar1 * mathVar2;
+document.getElementById("correct").innerHTML = mathAnswer;
+</script>
+<script>
+function click() {
+	let niceTry = "Nice Try!"
+	if(document.getElementById('number1').checked) {
+        document.getElementById("text").innerHTML = niceTry;
+    } else if(document.getElementById('number2').checked) {
+        document.getElementById("text").innerHTML = niceTry;
+    } else if(document.getElementById('number3').checked) {
+        document.getElementById("text").innerHTML = niceTry; 
+    } else if(document.getElementById("correct").checked) {
+        document.getElementById("correct").innerHTML = "Good Job!";
+    }
+}
+</script>
+<div id="text"></div>
+</body>	
+</main>
+</body>
+<footer>
+</footer>
+</div>
+</html>

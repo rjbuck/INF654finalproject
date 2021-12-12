@@ -1,0 +1,170 @@
+<!DOCTYPE=html>
+<html lang="en">
+<head>
+<title>FunTimes</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<div id="wrapper">
+<body>
+<header>
+<h1><a href="index.html">FunTimes</a></h1>
+</header>
+<main>
+<head>
+	<link rel="stylesheet" href="style.css">
+	<script>
+	//<img src="head_image.jpg" alt="Fun Times">
+	/*if (navigator.serviceWorker.controller) {
+		console.log("Active service worker found");
+		} else {
+			navigator.serviceWorker
+			.register("serviceWorker.js", {
+			scope: "./"
+			})
+			.then(function (reg) {
+			console.log("Service worker  registered);
+			});
+		}
+	} */
+if (navigator.serviceWorker) {
+  // Start registration process on every page load
+  window.addEventListener('load', () => {
+      navigator.serviceWorker
+          // The register function takes as argument
+          // the file path to the worker's file
+          .register('/serviceWorker.js')
+          // Gives us registration object
+          .then(reg => console.log('Service Worker Registered'))
+          .catch(swErr => console.log(
+                `Service Worker Installation Error: ${swErr}}`));
+    });
+}
+	</script>
+</head>
+<h3><a href="signup.html">Sign Up</h3>
+<script>
+var nestedArray = [ 0, 1, [0, 1], 2, [0,1,2], 3, [0,1,2,3], 4, [0,1,2,3,4], 5, [0,1,2,3,4,5], 6, [0,1,2,3,4,5,6], 7, [0,1,2,3,4,5,6,7], 8, [0,1,2,3,4,5,6,7,8], 9, [0,1,2,3,4,5,6,7,8,9], 10, [0,1,2,3,4,5,6,7,8,9,10], 11, [0,1,2,3,4,5,6,7,8,9,10,11], 12, [0,1,2,3,4,5,6,7,8,9,10,11,12]]
+//for($i = 0; $i < count($nestdArray); ++$i) {
+//	output($i,$nestedArray);}
+//var iterator = nestedArray.values();
+ 
+// Here all the elements of the array is being printed.
+//for (let elements of iterator) {
+  //console.log(elements);}
+//function output($i, $nestedArray)
+	//return nestedArray;
+</script>
+<?php
+
+?>
+<nav>
+	<ul>
+		<li><a href="levelpage.html?id=0">
+		<p>Level 1 - 0</p>
+		</li>
+		<li><a href="levelpage.html?id=1">
+		<p>Level 2 - 1</p>
+		</li>
+		<li><a href="levelpage.html">
+		<p>Level 3 - 0-1</p>
+		</li>
+		<li> <a href="levelpage.html?id=2">
+		<p>Level 4 - 2</p>
+		</li>
+		<li> <a href="levelpage.html">
+		<p>Level 5 - 0-2</p>
+		</li>
+		<li><a href="levelpage.html?id=3">
+		<p>Level 6 - 3</p>
+		</li>
+		<li><a href="levelpage.html">
+		<p>Level 7 - 0-3</p>
+		</li>
+		<li><a href="levelpage.html?id=4">
+		<p>Level 8 - 4</p>
+		</li>
+		<li><a href="levelpage.html">
+		<p>Level 9 - 0-4</p>
+		</li>
+		<li><a href="levelpage.html?id=5">
+		<p>Level 10 - 5</p>
+		</li>
+		<li><a href="levelpage.html">
+		<p>Level 11 - 0-5</p>
+		</li>
+		<li><a href="levelpage.html?id=6">
+		<p>Level 12 - 6</p>
+		</li>
+		<li><a href="levelpage.html">
+		<p>Level 13 - 0-6</p>
+		</li>
+		<li><a href="levelpage.html?id=7">
+		<p>Level 14 - 7</p>
+		</li>
+		<li><a href="levelpage.html">
+		<p>Level 15 - 0-7</p>
+		</li>
+		<li><a href="levelpage.html?id=8">
+		<p>Level 16 - 8</p>
+		</li>
+		<li><a href="levelpage.html">
+		<p>Level 17 - 0-8</p>
+		</li>
+		<li><a href="levelpage.html?id=9">
+		<p>Level 18 - 9</p>
+		</li>
+		<li><a href="levelpage.html">
+		<p>Level 19 - 0-9</p>
+		</li>
+		<li><a href="levelpage.html?id=10">
+		<p>Level 20 - 10</p>
+		</li>
+		<li><a href="levelpage.html">
+		<p>Level 21 - 0-10</p>
+		</li>
+		<li><a href="levelpage.html?id=11">
+		<p>Level 22 - 11</p>
+		</li>
+		<li><a href="levelpage.html">
+		<p>Level 23 - 0-11</p>
+		</li>
+		<li><a href="levelpage.html?id=12">
+		<p>Level 24 - 12</p>
+		</li>
+		<li><a href="levelpage.html">
+		<p>Level 25 - 0-12</p>
+		</li>
+	</ul>
+</nav>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyDY4oLckH6ACqBJOgtm_SzyFhvcxwBbY3U",
+    authDomain: "assignment654va4.firebaseapp.com",
+    projectId: "assignment654va4",
+    storageBucket: "assignment654va4.appspot.com",
+    messagingSenderId: "916619558579",
+    appId: "1:916619558579:web:54c0110dc232e923437ac6",
+    measurementId: "G-56MRXVJEJT"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
+
+
+</main>
+</body>
+<footer>
+</footer>
+</div>
+</html>
