@@ -207,7 +207,7 @@ const myQuery = query(collection(db, "levels"), where("levels", "==", "level"));
 onSnapshot(myQuery, { includeMetadataChanges: true }, (snapshot) => {
     snapshot.docChanges().forEach((change) => {
         if (change.type === "added") {
-            console.log("New city: ", change.doc.data());
+            console.log("New completed level: ", change.doc.data());
         }
 
         const source = snapshot.metadata.fromCache ? "local cache" : "server";
