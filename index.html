@@ -160,7 +160,99 @@ var nestedArray = [ 0, 1, [0, 1], 2, [0,1,2], 3, [0,1,2,3], 4, [0,1,2,3,4], 5, [
   const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
 </script>
+<div class="content">
+        <form id="submit-completed-level">
+            <input type="text" name="name" placeholder="Completed level">
+            <input type="text" name="levels" placeholder="numbers">
+            <button>Sumbit Completed Level</button>
+        </form>
+        <ul id="list-of-completed-levels"></ul>
+    </div>
+<script type="module">
+// Import the functions you need from the SDKs you need
+import {initializeApp} from "https://www.gstatic.com/firebasejs/9.2.0/firebase-app.js";
+//import { getAnalytics } from "firebase/analytics";
+import {getFirestore, collection, getDocs, addDoc, doc, deleteDoc, query, where, updateDoc } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-firestore.js";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyAvGWdP3gNkgupswjtAXXZVdUo8jQhXIAQ",
+  authDomain: "finalproject-5b47a.firebaseapp.com",
+  projectId: "finalproject-5b47a",
+  storageBucket: "finalproject-5b47a.appspot.com",
+  messagingSenderId: "223918696248",
+  appId: "1:223918696248:web:3961eba27488ab71e503cd",
+  measurementId: "G-ERMGGW44T3"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+//const analytics = getAnalytics(app); 
+
+async function getStuff(db) {
+	const theCollection = collection(db, "levels");
+	const theStuff = await getDocs(theCollection);
+	const theList = theStuff.docs.map((doc) => doc.data());
+	return theList;
+}
+const theList = document.querySelector("#list-of-completed-levels");
+const form = document.querySelector("#submit-completed-level");
+
+function theLevels(dc) {
+    let li = document.createElement("li");
+    let name = document.createElement("span");
+    let allTheLevels = document.createElement("span");
+    let level = document.createElement('div');
+
+    li.setAttribute('data-id', dc.id);
+    name.textContent = dc.data().name;
+    allTheLevels.textContent = dc.data().allTheLevels;
+    level.textContent = 'x';
+
+    li.appendChild(name);
+    li.appendChild(allTheLevels);
+    li.appendChild(level);
+
+    theList.appendChild(li);
+
+    level.addEventListener('click', (e) => {
+    e.stopPropagation();
+    let id = e.target.parentElement.getAttribute('data-id');
+    deleteDoc(doc(db, "levels", id))
+        })
+    }
+
+    const theseTheLevels = getDocs(collection(db, "levels")).then((snapshot) => {
+        snapshot.forEach((doc) => {
+            theLevels(doc)
+        })
+    })
+
+    const q = query(collection(db, "levels"), where("levels", "==", "0"));
+    const querySnapshot = await getDocs(q);
+    querySnapshot.forEach((doc) => {
+        console.log(doc.id, "=>", doc.data())
+    })
+
+    const upDoc = doc(db, "levels", "oE9pcYMH5zVzTcHjczYj");
+
+    updateDoc(upDoc, {
+        name: "0"
+    })
+
+    form.addEventListener(('submit'), (e) => {
+        e.preventDefault();
+        const docRef = addDoc(collection(db, "levels"), {
+            levels: form.levels.value,
+            name: form.name.value
+        })
+    })
+
+</script>
 
 </main>
 </body>
